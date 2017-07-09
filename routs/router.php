@@ -1,5 +1,6 @@
 <?php
 //echo "router test";
+require_once "core/views.php";
 
 $router = explode("/", $_SERVER['REQUEST_URI']);
 
@@ -38,7 +39,10 @@ try{
 
 
 }catch (Exception $e){
-    echo $e->getMessage();
+    require_once "errors/404.php";
+    if(file_exists('debug1')){
+        echo $e->getMessage();
+    }
 }
 
 
