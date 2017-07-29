@@ -4,6 +4,7 @@ require_once "core/views.php";
 
 $router = explode("/", $_SERVER['REQUEST_URI']);
 
+
 $controller_name = "Main";
 $action_name = "index";
 
@@ -40,7 +41,7 @@ try{
 
 }catch (Exception $e){
     require_once "errors/404.php";
-    if(file_exists('debug1')){
+    if(!file_exists('debug1')){
         echo $e->getMessage();
     }
 }
